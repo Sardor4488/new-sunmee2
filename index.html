@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunmee</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="choos_sections d-flex align-items-center justify-content-center" id="choos_sections">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 d-flex align-items-center justify-content-center ">
+        <div class="cursor_pointer" id="ildiz">
+          <h1 class="text-center text-white">Jenshen ildizi</h1>
+             <img src="./Images/about.jpg" class="w-100 h-100" alt="">
+         </div>
+      </div>
+      <div class="col-6 d-flex align-items-center justify-content-center ">
+       <div class="cursor_pointer">
+         <a href="./jenshen-ichimlik/index.html" id="ichimlik">
+        <h1 class="text-center text-white">Jenshen ichimligi</h1>
+          <img src="./Images/about.jpg" class="w-100 h-100" alt="">
+        </a>  
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Jadvalni to'ldiring</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+        <form class="form" action="./telegramform/telegram.php" method="POST">
+          <div class="row">
+            <div class="col-12 mt-4">
+              <p class="mb-2">Ismingizni kiriting</p>
+              <div class="input_backgraund">
+                <label class="d-flex" for="name">
+                  <img src="./Icons/person_icon.png" alt="" />
+                  Ismingiz...
+                </label>
+                <input class="ps-1" name="user_name" type="text" id="full_name" required />
+              </div>
+            </div>
+            <div class="col-12  mt-4">
+              <p class="mb-2">Telefon raqamingiz</p>
+              <div class="input_backgraund">
+                <label class="d-flex" for="phone">
+                  <img src="./Icons/Phone_icon.png" alt="" />
+                  +998
+                </label>
+                <input class="ps-1" name="user_phone" type="text" id="phone_number" " required />
+              </div>
+            </div>
+            <div class="col-12  mt-4">
+              <p class="mb-2">Mahsulot soni</p>
+              <div class="count_backgraund  d-flex align-items-center justify-content-between">
+                <span onclick="" id="decrementBtn" class="btn_count_product d-flex align-items-center px-3">-</span>
+                <input type="text" class="count_product" id="count_product" name="count" value="0" readonly id="" />
+                <span onclick="" id="incrementBtn" class="btn_count_product d-flex align-items-center px-3">+</span>
+              </div>
+            </div>
+            <col-12 class="col-12 mt-4">
+              <button type="submit" class="order_btn">Buyurtma berish</button>
+            </col-12>
+          </div>
+        </form>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+       </div>
+    </div>
+  </div>
+</div>
+  <div class="shadow" id="shadow"></div>
+  <div class="md_nav_x" id="md_nav_x">
+    <div class="text-end">
+      <img id="md_x" class="cursor_pointer" onclick="hidden()" src="./Icons/x_icon.svg" alt="">
+    </div>
+    <ul class=" align-items-center header_ul ">
+      <li><a href="#">Biz haqimizda</a></li>
+      <li><a href="#">Jenshen haqida</a></li>
+      <li><a href="#">Faktlar</a></li>
+      <li><a href="#">Mahsulot narxlari</a></li>
+      <li><a href="#">Aloqa</a></li>
+    </ul>
+    <button class="btn_order" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Buyurtma berish</button>
+  </div>
+  <header>
+    <div class="container d-flex justify-content-between align-items-center md_d_flex">
+      <div class="d-flex align-items-center">
+        <img src="./Images/logo.png" class="logo" alt="" />
+        <ul class="d-flex align-items-center header_ul md_none">
+          <li><a href="#">Biz haqimizda</a></li>
+          <li><a href="#">Jenshen haqida</a></li>
+          <li><a href="#">Faktlar</a></li>
+          <li><a href="#">Mahsulot narxlari</a></li>
+          <li><a href="#">Aloqa</a></li>
+        </ul>
+      </div>
+      <img onclick="unHidden()" id="md_nav_bar" src="./Icons/bars_icon.png" class="bar_icon cursor_pointer" alt="" />
+      <button class="btn_order md_none" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Buyurtma berish</button>
+    </div>
+
+
+    </div>
+
+  </header>
+
+  <section class="main_section">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-12 col-md-6">
+          <h1 class="title_large">Haqiqiy jenshen ildizi</h1>
+          <p class="note_text">
+            Mahsulot 100% tabiiyligi tufayli <br />
+            organizm uchun zararli emas.
+          </p>
+          <div class="container_star">
+            <div class="d-flex align-items-center">
+              <img src="./Icons/start_icon.png" class="icon_star" alt="" />
+              <p>Immunitet tizimini mustahkamlaydi</p>
+            </div>
+            <div class="d-flex align-items-center">
+              <img src="./Icons/start_icon.png" class="icon_star" alt="" />
+              <p>Qondagi shakar miqdorini kamaytiradi</p>
+            </div>
+            <div class="d-flex align-items-center">
+              <img src="./Icons/start_icon.png" class="icon_star" alt="" />
+              <p>Miya faoliyatini yaxshilaydi</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-6 my-2">
+              <button class="btn_order" data-bs-toggle="modal" data-bs-target="#exampleModal">Buyurtma berish</button>
+            </div>
+            <div class="col-12 col-md-6 my-2 d-flex align-items-center">
+              <img src="./Icons/play_vidio_icon.png" class="me-2 cursor_pointer play_icon" alt="" />
+              <p class="">Mahsulot haqida</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <img src="./Images/Amirhon.png" class="w-100" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="container_discount py-2">
+      <div class="animation_imgs_discount">
+        <img src="./Images/skidka_img20.png" alt="" />
+        <img src="./Images/skidka_img20.png" alt="" />
+        <img src="./Images/skidka_img20.png" alt="" />
+        <img src="./Images/skidka_img20.png" alt="" />
+        <img src="./Images/skidka_img20.png" alt="" />
+        <img src="./Images/skidka_img20.png" alt="" />
+        <img src="./Images/skidka_img20.png" alt="" />
+        <img src="./Images/skidka_img20.png" alt="" />
+        <img src="./Images/skidka_img20.png" alt="" />
+        <img src="./Images/skidka_img20.png" alt="" />
+        <img src="./Images/skidka_img20.png" alt="" />
+        <img src="./Images/skidka_img20.png" alt="" />
+        <img src="./Images/skidka_img20.png" alt="" />
+        <img src="./Images/skidka_img20.png" alt="" />
+        <img src="./Images/skidka_img20.png" alt="" />
+      </div>
+    </div>
+  </section>
+  <section class="order_section">
+    <div class="container">
+      <h1 class="title">Hoziroq buyurtma bering!</h1>
+      <div class="row">
+        <div class="col-12 col-md-6 my-2">
+          <div class="card_sale d-flex justify-content-between p-3">
+            <div class="row d-flex justify-content-between align-items-center w-100">
+              <div class="col-2 col-md-2 p-0 ms-0 me-0 icon check_container">
+                <img src="./Icons/checkbox_icon.png" class="ms-5 icon_checkbox_icon" alt="" />
+              </div>
+              <div class="col-10 col-md-4 ps-0 me-0 text-white">
+                <p class="mb-2 text-center sale_percentage">20% Chegirmada</p>
+                <p class="text_card_sale_mini p-2 d-flex justify-content-center align-items-center">
+                  Tejab qolasiz 300.000 UZS
+                </p>
+              </div>
+              <div class="col-2 lg_none d-md-none d-sm-block"></div>
+              <div class="col-10 col-md-6   px-0 me-0 d-flex align-items-center">
+                <h1 class="new_price ">1 200 000</h1>
+                <sub class="price_currency ms-2">UZS</sub>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 my-2">
+          <div class="card_price card_price_lg_block  d-flex align-items-center justify-content-between p-3">
+            <div class="row d-flex justify-content-between h-100 align-items-center w-100">
+              <div class="col-12 col-md-6 p-0 ms-0 me-0 d-flex align-items-center">
+                <img src="./Icons/empty_checkbox_icon.png" class="ms-5" alt="" />
+                <p class=" sale_percentage text-dark ms-4">
+                  Mahsulot narxi
+                </p>
+              </div>
+              <div class="col-12 col-md-6 ms-0 me-0 d-flex align-items-center">
+                <h1 class="old_price mb-0 text-dark">1 500 000</h1>
+                <sub class="price_currency ms-2 text-dark">UZS</sub>
+              </div>
+            </div>
+          </div>
+
+          <div class="card_price md_old_price_d_none d-flex justify-content-between p-3">
+            <div class="row ">
+              <div class="col-12 col-md-6 p-0 ms-0 me-0 d-flex align-items-center justify-content-between">
+                <img src="./Icons/empty_checkbox_icon.png" class="ms-3 " alt="" />
+                <div class="w-100 ms-4">
+                  <p class=" sale_percentage  text-dark mb-1">
+                  Mahsulot narxi
+                </p>
+                <div class="d-flex ">
+                  <h1 class="old_price text-dark">1 500 000</h1>
+                  <sub class="price_currency ms-1 text-dark mt-4">UZS</sub>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <form class="form" action="telegramform/php/send-message-to-telegram.php" method="post">
+          <div class="row">
+            <div class="col-12 col-md-4 mt-4">
+              <p class="mb-2">Ismingizni kiriting</p>
+              <div class="input_backgraund">
+                <label class="d-flex" for="name">
+                  <img src="./Icons/person_icon.png" alt="" />
+                  Ismingiz...
+                </label>
+                <input class="ps-1" name="name" type="text" id="first__name" required />
+              </div>
+            </div>
+            <div class="col-12 col-md-4 mt-4">
+              <p class="mb-2">Telefon raqamingiz</p>
+              <div class="input_backgraund">
+                <label class="d-flex" for="phone">
+                  <img src="./Icons/Phone_icon.png" alt="" />
+                  +998
+                </label>
+                <input class="ps-1" name="phone" type="text" id="phone__number" required/>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 mt-4">
+              <p class="mb-2">Mahsulot soni</p>
+              <div class="count_backgraund  d-flex align-items-center justify-content-between">
+                <span onclick="" id="decrementBtn" class="btn_count_product d-flex align-items-center px-3">-</span>
+                <input type="text" class="count_product" id="count_product" name="counter" value="0" readonly id="" />
+                <span onclick="" id="incrementBtn" class="btn_count_product d-flex align-items-center px-3">+</span>
+              </div>
+            </div>
+            <col-12 class="col-md-3 mt-4">
+              <button class="order_btn" type="submit">Buyurtma berish</button>
+            </col-12>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container"></div>
+  </section>
+  <section class="resultat_section">
+    <div class="container">
+      <h1 class="title">
+        Jenshen ildizi iste’molidan so’ng <br />
+        organizmda kuzatiladigan o’zgarishlar:
+      </h1>
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-4 px-0    d_block_md   ">
+          <div class="d-flex align-items-center resultat_items">
+            <div>
+              <h5>Immunitetni mustahkamlaydi</h5>
+              <p>
+                Immunitet tizimini mustahkamlaydi va tananing himoya
+                funktsiyalarini yaxshilaydi.
+              </p>
+            </div>
+            <img src="./Icons/light_icon.png" alt="" />
+          </div>
+          <div class="d-flex align-items-center resultat_items">
+            <div>
+              <h5>Miya faoliyatini yaxshilaydi</h5>
+              <p>
+                Miya faoliyatiga ijobiy ta’sir ko’rsatadi. Xotira va
+                konsentratsiyani yaxshilashga yordam beradi
+              </p>
+            </div>
+            <img src="./Icons/lamp_icon.png" alt="" />
+          </div>
+
+          <div class="d-flex align-items-center resultat_items">
+            <div>
+              <h5>Tinchlantiruvchi ta’sirga ega</h5>
+              <p>
+                Ruhiy zo’riqish, asabiy qo’zg’aluvchanlikdan so’ng
+                kuchlanishni bartaraf etadi
+              </p>
+            </div>
+            <img src="./Icons/icon_woomen.png" alt="" />
+          </div>
+
+          <div
+            class="d-flex align-items-center justify-content-between resultat_items"
+          >
+            <div>
+              <h5>Charchoq va holsizlik oldini oladi</h5>
+              <p>Charchoq va holsizlik yo’qolib harakatlar yengillashadi</p>
+            </div>
+            <img src="./Icons/icon_strong.png" alt="" />
+          </div>
+        </div>
+
+
+        <div class="col-sm-12 col-md-12 col-lg-4 px-0  d_none_lg     ">
+          <div
+            class="d-flex align-items-center resultat_items resultat_itemstwo"
+          >
+            <img src="./Icons/icon_secx.png" alt="" />
+            <div>
+              <h5>Ayollar va erkaklarda jinsiy funktsiyani yaxshilaydi</h5>
+              <p>
+                Jinsiy aloqa davomiyligini oshiradi. Tanani energiya bilan
+                to’ydiradi va kayfiyatni yaxshilaydi.
+              </p>
+            </div>
+          </div>
+          <div
+            class="d-flex align-items-center resultat_items resultat_itemstwo"
+          >
+            <img src="./Icons/icon_hand.png" alt="" />
+            <div>
+              <h5>Tanadagi yoshga bog’liq o’zgarishlarni sekinlashtiradi</h5>
+              <p>
+                Tana hujayralarining yangilanishi va yangilanish jarayonini
+                tezlashtiradi.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="d-flex align-items-center resultat_items resultat_itemstwo"
+          >
+            <img src="./Icons/light_icon.png" alt="" />
+            <div>
+              <h5>Qondagi shakar miqdorini kamaytiradi</h5>
+              <p>
+                Qondagi shakar darajasini nazorat qiladi va qon oqimini
+                yaxshilashga yordam beradi
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="d-flex align-items-center resultat_items resultat_itemstwo"
+          >
+            <img src="./Icons/icon_oclick.png" alt="" />
+            <div>
+              <h5>Uyqu rejimi yaxshilanadi</h5>
+              <p>
+                Uyqu rejimi yaxshilanib uyquga ketish va uyg’onish osonlashadi
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-12 col-md-12 col-lg-4">
+          <div class="h-100 w-100 d-flex align-items-center">
+            <img
+              class="w-100"
+              src="./Images/korean_jenshen_ildiz.png"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-12 col-lg-4 px-0 d_none_lg  ">
+          <div class="d-flex justify-content-end align-items-center resultat_items resultat_items_two">
+            <div>
+              <h5>Immunitetni mustahkamlaydi</h5>
+              <p>
+                Immunitet tizimini mustahkamlaydi va tananing himoya
+                funktsiyalarini yaxshilaydi.
+              </p>
+            </div>
+            <img src="./Icons/light_icon.png" alt="" />
+          </div>
+          <div class="d-flex justify-content-end align-items-center resultat_items resultat_items_two">
+            <div>
+              <h5>Miya faoliyatini yaxshilaydi</h5>
+              <p>
+                Miya faoliyatiga ijobiy ta’sir ko’rsatadi. Xotira va
+                konsentratsiyani yaxshilashga yordam beradi
+              </p>
+            </div>
+            <img src="./Icons/lamp_icon.png" alt="" />
+          </div>
+
+          <div class="d-flex justify-content-end align-items-center resultat_items resultat_items_two">
+            <div>
+              <h5>Tinchlantiruvchi ta’sirga ega</h5>
+              <p>
+                Ruhiy zo’riqish, asabiy qo’zg’aluvchanlikdan so’ng
+                kuchlanishni bartaraf etadi
+              </p>
+            </div>
+            <img src="./Icons/icon_woomen.png" alt="" />
+          </div>
+
+          <div
+            class="d-flex justify-content-end align-items-center  resultat_items resultat_items_two"
+          >
+            <div class="">
+              <h5>Charchoq va holsizlik oldini oladi</h5>
+              <p>Charchoq va holsizlik yo’qolib harakatlar yengillashadi</p>
+            </div>
+            <img class="" src="./Icons/icon_strong.png" alt="" />
+          </div>
+        </div>
+
+
+
+        <div class="col-sm-12 col-md-12 col-lg-4 px-0 d_block_md ">
+          <div
+            class="d-flex align-items-center resultat_items resultat_itemstwo"
+          >
+            <img src="./Icons/icon_secx.png" alt="" />
+            <div>
+              <h5>Ayollar va erkaklarda jinsiy funktsiyani yaxshilaydi</h5>
+              <p>
+                Jinsiy aloqa davomiyligini oshiradi. Tanani energiya bilan
+                to’ydiradi va kayfiyatni yaxshilaydi.
+              </p>
+            </div>
+          </div>
+          <div
+            class="d-flex align-items-center resultat_items resultat_itemstwo"
+          >
+            <img src="./Icons/icon_hand.png" alt="" />
+            <div>
+              <h5>Tanadagi yoshga bog’liq o’zgarishlarni sekinlashtiradi</h5>
+              <p>
+                Tana hujayralarining yangilanishi va yangilanish jarayonini
+                tezlashtiradi.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="d-flex align-items-center resultat_items resultat_itemstwo"
+          >
+            <img src="./Icons/light_icon.png" alt="" />
+            <div>
+              <h5>Qondagi shakar miqdorini kamaytiradi</h5>
+              <p>
+                Qondagi shakar darajasini nazorat qiladi va qon oqimini
+                yaxshilashga yordam beradi
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="d-flex align-items-center resultat_items resultat_itemstwo"
+          >
+            <img src="./Icons/icon_oclick.png" alt="" />
+            <div>
+              <h5>Uyqu rejimi yaxshilanadi</h5>
+              <p>
+                Uyqu rejimi yaxshilanib uyquga ketish va uyg’onish osonlashadi
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 text-center d-flex align-items-center justify-content-center">
+          <img src="./Images/imges_jenshenn.png" class="w-100" alt="">
+        </div>
+        <div class="col-12 col-md-6">
+          <h1 class="title">Jenshen haqida muhim ma’lumotlar:</h1>
+          <p class="about_jenshen_text">
+            <span>«Jenshen»</span> so‘zi xitoychadan tarjima qilinganda «hayot
+            ildizi» degan ma’noni bildiradi. Jenshenning bunday deb atalishi,
+            ildizi­ning shunchalik qimmat bo‘lishi bejiz emas. Jenshenning
+            ildizidan og‘ir kasalliklarni davolaydigan dorilar tayyorlanadi.
+            Jenshen Koreyaning eng mashxur dorivor o’simligi hisoblanadi va
+            "Koreya times" internet nashri xabar qilishicha Jenshen
+            iste’moliga talab yildan yilga oshib bormoqda, bunga sabab esa
+            uning davolovchi xususiyatlari ko’p ekanligida.
+          </p>
+          <ul class="mt-3 mb-0">
+            <li class="mb-2">
+              Qadimgi yilnomalarda jenshen oltindan qimmat ekanligi haqida
+              aytilgan va u qirol oilalarida kasalliklarni davolash uchun
+              foydalanilgan.
+            </li>
+            <li>
+              Bugungi kunda jenshen 35 dan ortiq mamlakatlarda sotiladi va 2
+              milliard dollar ko’proq mablag’da sotuvlar amalga oshiriladi,
+              yarmi Janubiy Koreyadan keladi.
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3">
+          <div class="benefit_count">
+            <h1>1.3 mlrd</h1>
+            <p>Inson uchun eng foydali mahsulot</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3">
+          <div class="benefit_count">
+            <h1>100+</h1>
+            <p>Kasalliklarni oldini olish va davolash</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3">
+          <div class="benefit_count">
+            <h1>5000 yil</h1>
+            <p>Iste'mol qilish tarixi</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3">
+          <div class="benefit_count">
+            <h1>100 yil</h1>
+            <p>Jenshen ildizi yashash umri</p>
+          </div>
+        </div>
+      </div>
+      <form class="form" action="./telegramform/" method="post">
+        <div class="row">
+          <div class="col-12 col-md-4 mt-4">
+            <p class="mb-2">Ismingizni kiriting</p>
+            <div class="input_backgraund">
+              <label class="d-flex" for="name">
+                <img src="./Icons/person_icon.png" alt="" />
+                Ismingiz...
+              </label>
+              <input class="ps-1" name="name" type="text" id="first__name" />
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mt-4">
+            <p class="mb-2">Telefon raqamingiz</p>
+            <div class="input_backgraund">
+              <label class="d-flex" for="phone">
+                <img src="./Icons/Phone_icon.png" alt="" />
+                +998
+              </label>
+              <input class="ps-1" name="phone" type="text" id="phone__number"/>
+            </div>
+          </div>
+         
+          <col-12 class="col-md-3 mt-4 btn_order2">
+            <button class="order_btn" type="submit">Buyurtma berish</button>
+          </col-12>
+        </div>
+      </form>
+    </div>
+  </section>
+  <section class="about_company">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 d-flex align-items-center">
+          <div>
+            <h1 class="title">Kompaniya haqida</h1>
+            <p class="about_jenshen_text">
+              "Sunmee" kompaniyasi 2021-yildan boshlab uzoq sharq o’simligi
+              bo’lgan “Jenshen”ning ildizidan tayyorlangan ichimlikni ishlab
+              chiqarib, O’zbekiston bo’ylab yetkazib berishni yo’lga qo’ydi.
+              Kompaniyamiz Koreyaning "Chejun" ITD hamda Qizil Jenshen
+              sharbati MChJ korxonalari bilan hamkorlikda ishlaydi. "Sunmee"
+              qizil jenshen ildizi Janubiy Koreyada yetishtirilib
+              O’zbekistonda qadoqlanadi.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 mt-2">
+          <iframe width="100%" class="" height="315" src="https://www.youtube.com/embed/m3iOJnBGcOk"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="row">
+        <h1 class="title">Sertifikatlar</h1>
+      </div>
+      <div class="row">
+        <div class="col-12 col-lg-2 d-flex align-items-center justify-content-center mt-4">
+          <h1 class="title_partners">Bizning hamkorlarimiz:</h1>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2 d-flex align-items-center justify-content-center mt-4">
+          <img class="" src="./Icons/Amirxonshou_logo.png" alt="" />
+        </div>
+        <div class="col-6 col-md-3 col-lg-2 d-flex align-items-center justify-content-center mt-4">
+          <img class="" src="./Icons/logo_mening_yurtim.png" alt="" />
+        </div>
+        <div class="col-6 col-md-3 col-lg-2 d-flex align-items-center justify-content-center mt-4">
+          <img class="" src="./Icons/logo_black_booknomy.png" alt="" />
+        </div>
+        <div class="col-6 col-md-3 col-lg-2 d-flex align-items-center justify-content-center mt-4">
+          <img class="" src="./Icons/logo_good_club.png" alt="" />
+        </div>
+        <div class="col-6 col-md-3 col-lg-2 d-flex align-items-center justify-content-center mt-4">
+          <img class="" src="./Icons/Goodbook_logo bl.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="social_network py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <h1 class="title">Bizni ijtimoiy tarmoqlarda kuzatib boring!</h1>
+        </div>
+        <div class="col-12 col-md-6 d-flex justify-content-end align-items-end">
+          <a href="https://www.facebook.com/sunmee.uz/" class="m-2 cursor_pointer" target="_blank" target="_blank" target="_blank"
+            target="_blank"><img src="./Icons/icon_facebook.png" alt="" /></a>
+          <a href="#https://t.me/sunmeeuz" class="m-2 cursor_pointer">
+            <img src="./Icons/icon_telegram.png" alt="" /></a>
+          <a href="https://www.youtube.com/@sunmeecopmany9812" class="m-2 cursor_pointer" target="_blank" target="_blank"
+            target="_blank" target="_blank"><img src="./Icons/icon_youtobe.png" alt="" /></a>
+          <a href="https://www.instagram.com/sunmeeuz/" class="m-2 cursor_pointer" target="_blank" target="_blank" target="_blank"
+            target="_blank"><img src="./Icons/icon_instagram.png" alt="" /></a>
+        </div>
+        <div class="mt-3 col-12 col-md-4">
+          <iframe class="" width="100%" height="300" src="https://www.youtube.com/embed/iubo4EpMLsA"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <div class="mt-3 col-12 col-md-4">
+          <iframe class="" width="100%" height="300" src="https://www.youtube.com/embed/40EAxhdmac0"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <div class="mt-3 col-12 col-md-4">
+          <iframe class="" width="100%" height="300" src="https://www.youtube.com/embed/U5pNjFg8KuE"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="buy_howe mt-4 mb-2">
+        <h1 class="title mb-0">Mahsulotni sotib olish uchun</h1>
+        <h1 class="setup3_text">3 ta qadam</h1>
+        <div class="row d-flex align-items-center justify-content-between">
+          <div class="col-12 col-md-3">
+            <img src="./Images/korean_jenshen_ildiz.png" class="w-100" alt="" />
+          </div>
+          <div class="col-12 col-md-9">
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-4 setups mb-5 px-0">
+                <img src="./Icons/Ellipse.png" class="ellips" alt="">
+                <h1>01</h1>
+                <p>
+                  Ismi sharifingiz va telefon <br />
+                  raqamingizni qoldiring
+                </p>
+              </div>
+              <div class="col-12 col-sm-12 col-md-4 setups mb-5 px-0">
+                <img src="./Icons/Ellipse.png" class="ellips" alt="">
+                <h1>02</h1>
+                <p>
+                  Tez orada siz bilan bizning <br />
+                  mutaxassislar bog’lanadi
+                </p>
+              </div>
+              <div class="col-12 col-sm-12 col-md-4 setups mb-5 px-0">
+                <img src="./Icons/Ellipse.png" class="ellips" alt="">
+                <h1>03</h1>
+                <p>
+                  Buyurtma 24 soat ichida <br />
+                  o‘z manziliga yetkazib beriladi
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="py-5">
+    <div class="container">
+      <div class="row border_bottom pb-5">
+        <div class="col-12 col-md-4 d-flex align-items-center lg-center">
+          <img src="./Images/logo.png" alt="" />
+        </div>
+        <div class="col-12 col-md-4 d-flex align-items-center lg-center my-3 mb-4">
+          <a class="footer_links mx-2" href="#">Biz haqimizda</a>
+          <a class="footer_links mx-2" href="#">Mahsulot narxi</a>
+        </div>
+        <div class="col-12 col-md-4 d-flex align-items-center lg-center">
+          <a href="tel:+998712036363" class=""><img src="./Icons/Phone_icon.png" alt="" /></a>
+          <a href="tel:+998712036363" class="phone_number ms-2">71 203 63 63</a>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="mt-2 col-12 col-md-4 d-flex align-items-center lg-center">
+          <img class="mx-2" src="./Icons/facebook_icon_solid.png" alt="" />
+          <img class="mx-2" src="./Icons/instagram_icon_solid.png" alt="" />
+          <img class="mx-2" src="./Icons/telegram_icon_solid.png" alt="" />
+        </div>
+        <div class="mt-2 col-12 col-md-4 d-flex align-items-center lg-center">
+          <p>Toshkent sh., Yakkasaroy tumani, Sabo ko'chasi 45</p>
+        </div>
+        <div class="mt-2 col-12 col-md-4 d-flex align-items-center lg-center">
+          2023 Copyright: Sunmee.uz
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="./app.js"></script>
+</body>
+
+</html>

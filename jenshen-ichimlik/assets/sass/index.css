@@ -1,0 +1,12 @@
+@use "./base/base.scss";
+@use "./layout/header";
+@use "./sections/home.scss";
+@use "./sections/price.scss";
+@use "./sections/order.scss";
+@use "./sections/about.scss";
+@use "./sections/facts.scss";
+@use "./sections/sertificats.scss";
+@use "./sections/info.scss";
+@use "./sections/purchace_product.scss";
+@use "./layout/footer";
+/*# sourceMappingURL=index.css.map */
